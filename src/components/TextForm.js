@@ -2,13 +2,19 @@ import React, { useState } from "react";
 
 const TextForm = (props) => {
   const handleUpClick = () => {
-    console.log("Uppercase was clicked");
+    // console.log("Uppercase was clicked");
     let newtext = text.toUpperCase();
     setText(newtext);
   };
 
+  const handleLoClick = () => {
+    // console.log("Uppercase was clicked");
+    let newtext2 = text.toLowerCase();
+    setText(newtext2);
+  };
+
   const handleOnChange = (event) => {
-    console.log("Onchange");
+    // console.log("Onchange");
     setText(event.target.value);
   };
   const [text, setText] = useState("Enter text here!");
@@ -26,12 +32,16 @@ const TextForm = (props) => {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button className="btn btn-primary ms-1" onClick={handleUpClick}>
+          Convert to Uppercase
+        </button>
+
+        <button className="btn btn-success mx-2" onClick={handleLoClick}>
           Convert to Uppercase
         </button>
       </div>
       <div className="container my-3">
-        <h1>Your text summmary</h1>
+        <h2>Your text summmary</h2>
         <p>
           {text.split(" ").length} words {text.length} charachers
         </p>
